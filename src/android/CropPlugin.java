@@ -97,15 +97,16 @@ public class CropPlugin extends CordovaPlugin {
     private String getTempDirectoryPath() {
         File cache = null;
 
+        // Max 2021-11-20: use only internal storage to avoid issues with Android 11
         // SD Card Mounted
-        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+        /* if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             cache = new File(Environment.getExternalStorageDirectory().getAbsolutePath() +
                     "/Android/data/" + cordova.getActivity().getPackageName() + "/cache/");
-        }
+        } */
         // Use internal storage
         else {
             cache = cordova.getActivity().getCacheDir();
-        }
+        /* } */
 
         // Create the cache directory if it doesn't exist
         cache.mkdirs();

@@ -102,9 +102,9 @@ public class CropPlugin extends CordovaPlugin {
         /* if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             cache = new File(Environment.getExternalStorageDirectory().getAbsolutePath() +
                     "/Android/data/" + cordova.getActivity().getPackageName() + "/cache/");
-        } */
+        }
         // Use internal storage
-        else {
+        else { */
             cache = cordova.getActivity().getCacheDir();
         /* } */
 
